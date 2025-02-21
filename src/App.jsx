@@ -1,7 +1,7 @@
 import { React } from "react";
 import "./App.sass";
 
-import MovieItem from "./components/MoviesList/MovieItem";
+import MovieCard from "./components/MoviesList/MovieCard/MovieCard";
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <div className="Background">
-          <MovieItem 
+          <MovieCard 
             {...movieData} className="movieCard"
           />
           

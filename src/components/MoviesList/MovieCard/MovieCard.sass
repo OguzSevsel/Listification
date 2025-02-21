@@ -1,0 +1,116 @@
+$Background-Color: #0d1b2a
+$secondaryColor: #1b263b
+$secondaryColorAlternate: #415a77
+$primaryColorAlternate2: #778da9
+$primaryColor: #e0e1dd
+$borderRadius: 10px
+
+.movieCard
+    background: $secondaryColorAlternate
+    display: grid
+    grid-template-columns: 40% 60%
+    grid-template-rows: 55% 10% 35%
+    width: 30em
+    height: 30em
+    padding: 1.5em
+    gap: 0.3em
+    border-radius: $borderRadius
+
+.movieDirUp
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    height: 30%
+    padding: 0.5em
+
+.movieDirBot
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    height: 50%
+    padding: 0.5em
+
+.movieName
+    color: yellow
+    margin-bottom: 1em
+h2
+    margin: 0
+    padding: 0
+    color: white
+
+p
+    margin: 0
+    padding: 0
+
+.movieDir
+    grid-row: 1
+    grid-column: 1
+    width: 100%
+    height: 100%
+    background: $primaryColorAlternate2
+    border-radius: $borderRadius
+
+.moviePoster
+    grid-row: 1
+    grid-column: 2
+    width: 100%
+    height: 100%
+    border-radius: $borderRadius
+
+.movieInfo
+    background: $primaryColorAlternate2
+    grid-row: 3
+    grid-column: span 2
+    border-radius: $borderRadius
+    display: grid
+    grid-template-columns: 40% 60%
+
+.movieInfoLeft
+    grid-column: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 0.5em
+
+.movieGenre
+    background: $secondaryColorAlternate
+    border-radius: $borderRadius
+    width: 50%
+    height: 25%
+    display: flex
+    justify-content: center
+    align-items: center
+
+.movieRating
+    background: $secondaryColorAlternate
+    border-radius: $borderRadius
+    width: 50%
+    height: 25%
+    display: flex
+    justify-content: center
+    align-items: center
+
+.mustWatch
+    background: $secondaryColorAlternate
+    border-radius: $borderRadius
+    width: 50%
+    height: 25%
+    display: flex
+    justify-content: center
+    align-items: center
+
+.movieInfoRight
+    grid-column: 2
+    display: flex
+    justify-content: center
+    align-items: center
+
+.moviePlot
+    width: 90%
+    height: 90%
+    display: flex
+    justify-content: center
+    align-items: center
