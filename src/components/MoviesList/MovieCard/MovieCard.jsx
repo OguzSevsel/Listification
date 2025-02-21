@@ -1,10 +1,22 @@
 import React from "react";
 import "./MovieCard.sass";
+import {useDraggable} from '@dnd-kit/core';
 
-const MovieCard = ({name, director, actors, genre, rating, posterURL, posterDef, plot, className}) => {
+const MovieCard = ({ name, director, actors, genre, rating, posterURL, posterDef, plot, className }) => {
+
+    const {attributes, listeners, setNodeRef, transform} = useDraggable({
+        id: 'draggable',
+      });
+
+      const style = transform ? {
+        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
+      } : undefined;
 
     return (
-        <div className={className}>
+        <div  
+        ref={setNodeRef}
+        className={className}
+        >
             <div className="movieDir">
                 <div className="movieDirUp">
                     <h1 className="movieName">{name}</h1>
