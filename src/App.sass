@@ -1,13 +1,187 @@
-$Background-Color: #0d1b2a
-$secondaryColor: #1b263b
-$secondaryColorAlternate: #415a77
-$primaryColorAlternate2: #778da9
-$primaryColor: #e0e1dd
+$Background-Color: #313131
+$secondaryColor: #38474d
+$secondaryColorAlternate: #5b686d
+$primaryColorAlternate2: #7e898d
+$primaryColor: #a1aaad
+$textColor: #c4cbcd
 
 .Background
     background: $Background-Color
     height: 100%
     width: 100%
     position: fixed
+    display: flex
+    justify-content: center
+    align-items: center
     left: 0
     top: 0
+
+.grid-wrapper
+    width: 95%
+    height: 805px
+    overflow-y: auto
+    overflow-x: hidden
+
+.grid
+    display: grid
+    grid-auto-rows: minmax(300px, auto)
+    grid-template-columns: repeat(4, 1fr)
+    background: $Background-Color
+    gap: 0.4em
+    padding: 1em
+    justify-content: center
+    align-content: center
+    border-radius: 10px
+
+.grid-wrapper::-webkit-scrollbar
+    display: none
+
+.grid-wrapper
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+/* Extra Small Screens */
+@media (max-width: 200px)
+    p
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        max-width: 100%
+        &:hover
+            overflow: auto
+            white-space: normal
+            background: rgba(0, 0, 0, 0.8)
+            color: white
+            position: absolute
+            z-index: 10
+
+    h2
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        max-width: 100%
+        &:hover
+            overflow: auto
+            white-space: normal
+            background: rgba(0, 0, 0, 0.8)
+            color: white
+            position: absolute
+            z-index: 10
+
+    .movieName
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        max-width: 100%
+        &:hover
+            overflow: auto
+            white-space: normal
+            background: rgba(0, 0, 0, 0.8)
+            color: white
+            position: absolute
+            z-index: 10
+
+    .mustWatch
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        max-width: 100%
+
+@mixin gridRow($max-height)
+    @media (max-height: $max-height)
+        @content
+
+// Usage:
+
+@include gridRow(800px)
+    .grid-wrapper
+        height: 768px
+
+@include gridRow(750px)
+    .grid-wrapper
+        height: 750px
+
+@include gridRow(725px)
+    .grid-wrapper
+        height: 725px
+
+@include gridRow(700px)
+    .grid-wrapper
+        height: 700px
+
+@include gridRow(675px)
+    .grid-wrapper
+        height: 675px
+
+@include gridRow(650px)
+    .grid-wrapper
+        height: 650px
+
+@include gridRow(625px)
+    .grid-wrapper
+        height: 625px
+
+@include gridRow(600px)
+    .grid-wrapper
+        height: 600px
+
+@include gridRow(575px)
+    .grid
+        grid-auto-rows: minmax(400px, auto)
+    .grid-wrapper
+        height: 575px
+
+@include gridRow(550px)
+    .grid
+        grid-auto-rows: minmax(400px, auto)
+    .grid-wrapper
+        height: 550px
+
+@include gridRow(525px)
+    .grid
+        grid-auto-rows: minmax(400px, auto)
+    .grid-wrapper
+        height: 525px
+
+@include gridRow(500px)
+    .grid
+        grid-auto-rows: minmax(400px, auto)
+    .grid-wrapper
+        height: 500px
+    p
+        white-space: normal
+        color: white
+        z-index: 10
+
+@include gridRow(340px)
+    .grid-wrapper
+        height: 320px
+    p
+        white-space: normal
+        color: white
+        z-index: 10
+
+@mixin gridCol($max-width)
+    @media (max-width: $max-width)
+        @content
+
+@include gridCol(1519px)
+    .grid
+        grid-template-columns: repeat(3, 1fr)
+
+@include gridCol(1150px)
+    .grid
+        grid-template-columns: repeat(2, 1fr)
+
+@include gridCol(780px)
+    .grid
+        grid-template-columns: 1fr
+
+@include gridCol(400px)
+    .grid
+        grid-template-columns: 350px
+
+@include gridCol(375px)
+    .grid
+        grid-template-columns: 320px
+        grid-auto-rows: minmax(450px, auto)

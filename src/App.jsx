@@ -22,12 +22,65 @@ function App() {
 
   return (
     <>
+
       <div className="Background">
+
+        <div className="grid-wrapper">
+
+          <div className="grid">
+
           <MovieCard 
-            {...movieData} className="movieCard"
-          />
-          
-      </div>
+              {...movieData} className="movieCard"
+            />
+
+            <MovieCard 
+              {...movieData} className="movieCard"
+            />
+
+            <MovieCard 
+              {...movieData} className="movieCard"
+            />
+
+            <MovieCard 
+              {...movieData} className="movieCard"
+            />
+        
+            <MovieCard 
+              {...movieData} className="movieCard"
+            />
+
+            <MovieCard 
+              {...movieData} className="movieCard"
+            />
+
+            <MovieCard 
+              {...movieData} className="movieCard"
+            />
+
+<MovieCard 
+              {...movieData} className="movieCard"
+            />
+
+<MovieCard 
+              {...movieData} className="movieCard"
+            />
+
+<MovieCard 
+              {...movieData} className="movieCard"
+            />
+
+<MovieCard 
+              {...movieData} className="movieCard"
+            />
+
+          </div>
+
+            
+
+        </div>
+    
+    </div>
+      
     </>
   )
 }

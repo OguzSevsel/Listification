@@ -8,8 +8,8 @@ const MovieCard = ({name, director, actors, genre, rating, posterURL, posterDef,
             <div className="movieDir">
                 <div className="movieDirUp">
                     <h1 className="movieName">{name}</h1>
-                    <h2 >Director</h2>
-                    <p >{director}</p>
+                    <h2>Director</h2>
+                    <p>{director}</p>
                 </div>
                 
                 <div className="movieDirBot">
@@ -28,11 +28,11 @@ const MovieCard = ({name, director, actors, genre, rating, posterURL, posterDef,
 
                 <div className="movieInfoLeft">
                     <div className="movieGenre">
-                        <p>Genre <br />{genre}</p>
+                        <p>{genre}</p>
                     </div>
 
                     <div className="movieRating">
-                        <p>IMDB Rating <br/>{rating}</p>
+                        <p>IMDB <br/>{rating}</p>
                     </div>
                     <button className="mustWatch">
                         Add to Must Watch

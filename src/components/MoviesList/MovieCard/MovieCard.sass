@@ -1,28 +1,46 @@
-$Background-Color: #0d1b2a
-$secondaryColor: #1b263b
-$secondaryColorAlternate: #415a77
-$primaryColorAlternate2: #778da9
-$primaryColor: #e0e1dd
+$movieCardBackground: #D5BDAF
+$movieCardDiv: #D5BDAF
+$movieInfoColors: #EDEDE9
+$headingColor: white
+$textColor: #313131
+
+$secondaryColor: #38474d
+$primaryColor: #a1aaad
 $borderRadius: 10px
 
 .movieCard
-    background: $secondaryColorAlternate
+    background: $movieCardBackground
     display: grid
     grid-template-columns: 40% 60%
-    grid-template-rows: 55% 10% 35%
-    width: 30em
-    height: 30em
-    padding: 1.5em
-    gap: 0.3em
+    grid-template-rows: 50% 5% 42.3%
+    width: 100%
+    height: 100%
     border-radius: $borderRadius
+    overflow: auto
+    transition: transform 100ms ease-in
+    &:hover
+        transform: scale(1.02)
+        box-shadow: 1px 1px 25px #D5BDAF
+
+.movieDir
+    grid-row: 1
+    grid-column: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    border-radius: $borderRadius
+    overflow: auto
 
 .movieDirUp
     display: flex
     flex-direction: column
     justify-content: center
     align-items: flex-start
-    height: 30%
-    padding: 0.5em
+    height: 40%
+    width: 90%
 
 .movieDirBot
     display: flex
@@ -30,27 +48,26 @@ $borderRadius: 10px
     justify-content: center
     align-items: flex-start
     height: 50%
-    padding: 0.5em
+    width: 90%
 
 .movieName
     color: yellow
-    margin-bottom: 1em
+    margin: 0
+    margin-bottom: 0.2em
+    padding: 0
+
 h2
     margin: 0
     padding: 0
-    color: white
+    color: $headingColor
+    font-size: 1em
 
 p
     margin: 0
     padding: 0
-
-.movieDir
-    grid-row: 1
-    grid-column: 1
-    width: 100%
-    height: 100%
-    background: $primaryColorAlternate2
-    border-radius: $borderRadius
+    color: $textColor
+    font-size: 1em
+    text-align: center
 
 .moviePoster
     grid-row: 1
@@ -58,14 +75,17 @@ p
     width: 100%
     height: 100%
     border-radius: $borderRadius
+    overflow: auto
 
 .movieInfo
-    background: $primaryColorAlternate2
+    background: $movieCardDiv
     grid-row: 3
     grid-column: span 2
+    margin: 0.2em
     border-radius: $borderRadius
     display: grid
     grid-template-columns: 40% 60%
+    overflow: auto
 
 .movieInfoLeft
     grid-column: 1
@@ -76,37 +96,46 @@ p
     gap: 0.5em
 
 .movieGenre
-    background: $secondaryColorAlternate
+    background: $movieInfoColors
     border-radius: $borderRadius
-    width: 50%
+    width: 75%
     height: 25%
     display: flex
     justify-content: center
     align-items: center
+    overflow: auto
 
 .movieRating
-    background: $secondaryColorAlternate
+    background: $movieInfoColors
     border-radius: $borderRadius
-    width: 50%
+    width: 75%
     height: 25%
     display: flex
     justify-content: center
     align-items: center
 
 .mustWatch
-    background: $secondaryColorAlternate
+    background: $movieInfoColors
     border-radius: $borderRadius
-    width: 50%
+    color: $textColor
+    width: 75%
     height: 25%
     display: flex
     justify-content: center
     align-items: center
+    border-width: 1px
+    border-color: $textColor
+    border-style: solid
+    transition: transform 100ms ease-in
+    &:hover
+        transform: scale(1.05)
 
 .movieInfoRight
     grid-column: 2
     display: flex
     justify-content: center
     align-items: center
+    overflow: auto
 
 .moviePlot
     width: 90%
@@ -114,3 +143,45 @@ p
     display: flex
     justify-content: center
     align-items: center
+
+.movieGenre::-webkit-scrollbar
+    display: none
+
+.movieGenre
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+.movieCard::-webkit-scrollbar
+    display: none
+
+.movieCard
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+.movieInfoLeft::-webkit-scrollbar
+    display: none
+
+.movieInfoLeft
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+.movieInfoRight::-webkit-scrollbar
+    display: none
+
+.movieInfoRight
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+.movieDir::-webkit-scrollbar
+    display: none
+
+.movieDir
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+.movieInfo::-webkit-scrollbar
+    display: none
+
+.movieInfo
+    -ms-overflow-style: none
+    scrollbar-width: none
