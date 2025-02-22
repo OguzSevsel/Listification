@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from "../../Buttons/Button"
 
 function MovieInfo({className, genre, rating, plot}) {
   return (
@@ -6,20 +7,21 @@ function MovieInfo({className, genre, rating, plot}) {
     <div className={className}>
 
         <div className="movieInfoLeft">
-            <div className="movieGenre">
-                <p>{genre}</p>
+            
+            <div className="movieGenre style font">
+                <p className='movieGenreText'>{genre}</p>
             </div>
 
-            <div className="movieRating">
-                <p>IMDB <br />{rating}</p>
+            <div className="movieRating style font">
+                <p className='style'>IMDB <br />{rating}</p>
             </div>
-            <button className="mustWatch">
-                Add to Must Watch
-            </button>
+
+            <Button isIcon={false} buttonText={"Add to Must Watch"} className="mustWatch style font" rounding={"10px"}/>
+                
         </div>
 
         <div className="movieInfoRight">
-            <p className="moviePlot">{plot}</p>
+            <p className="moviePlot style font">{plot}</p>
         </div>
 
     </div>

@@ -1,32 +1,86 @@
-$movieCardBackground: #D5BDAF
-$movieCardDiv: #D5BDAF
-$movieInfoColors: #EDEDE9
-$headingColor: white
-$textColor: #313131
+$movieCardBackground: #252525
 
-$secondaryColor: #38474d
-$primaryColor: #a1aaad
+$movieCardInfo: #252525
+
+$movieNameColor: #f2f2f2
+
+$headingColor: #d8d8d8
+
+$textColor: #bebebe
+
+$movieInfoColors: #313131
+
 $borderRadius: 10px
-$fs-xl: 2rem
-$fs-600: 1.5rem
-$fs-500: 1.25rem
-$fs-400: 1rem
-$fs-300: 0.75rem
-$fs-200: 0.50rem
-$fs-100: 0.25rem
+$fs-xl: 1.40rem
+$fs-600: 1.20rem
+$fs-500: 1rem
+$fs-400: 0.80rem
+$fs-300: 0.60rem
+$fs-200: 0.40rem
+$fs-100: 0.20rem
+
+.font
+    font-family: "Shantell Sans", serif
+    font-weight: 500
+    font-style: normal
+    font-variation-settings: "BNCE" 0, "INFM" 0, "SPAC" 0
+
+.movieCardStyle
+    background: $movieCardBackground
+    border-radius: $borderRadius
+
+.movieInfoStyle
+    background: $movieCardBackground
+    border-radius: $borderRadius
+
+h2.style
+    color: $headingColor
+    font-size: $fs-500
+
+p.style
+    color: $textColor
+    font-size: $fs-400
+
+li.style
+    color: $textColor
+    font-size: $fs-400
+
+.movieGenreText
+    text-align: center
+    color: $textColor
+
+.movieGenre.style
+    background: $movieInfoColors
+    font-size: $fs-400
+
+.movieRating.style
+    background: $movieInfoColors
+    font-size: $fs-400
+    border-radius: $borderRadius
+
+.mustWatch.style
+    background: $movieInfoColors
+    color: $textColor
+    font-size: $fs-300
+    border: none
+    border-radius: $borderRadius
+    border-style: outset
+    border-color: $textColor
+    border-width: 1px
+
+.movieName.style
+    color: $movieNameColor
+    font-size: $fs-xl
 
 .movieCard
     display: grid
-    background: $movieCardBackground
     grid-template-columns: 40% 60%
     grid-template-rows: 50% 5% 42.3%
     height: 100%
     width: 100%
-    border-radius: $borderRadius
     overflow: hidden
     &:hover
-        transform: scale(1.02)
-        box-shadow: 0.2px 0.2px 8px $movieCardBackground
+        box-shadow: 3px 3px 10px $movieCardBackground
 
 .movieDir
     grid-row: 1
@@ -35,32 +89,26 @@ $fs-100: 0.25rem
     width: 100%
     height: 100%
     padding-inline-start: 0.2em
-    border-radius: $borderRadius
     overflow: auto
 
 .movieName
-    color: yellow
-    font-size: $fs-xl
     margin: 0
     padding: 0
     text-align: left
     overflow: auto
-    max-width: 90%
+    max-width: 85%
+    text-overflow: ellipsis
 
 h2
     margin: 0
     padding: 0
-    color: $headingColor
-    max-width: 90%
-    font-size: $fs-500
+    max-width: 85%
 
 p
     margin: 0
     padding: 0
-    color: $textColor
-    font-size: $fs-400
     text-align: left
-    max-width: 90%
+    max-width: 85%
 
 .moviePoster
     grid-row: 1
@@ -71,11 +119,9 @@ p
     overflow: auto
 
 .movieInfo
-    background: $movieCardDiv
     grid-row: 3
     grid-column: span 2
     margin: 0.2em
-    border-radius: $borderRadius
     display: grid
     grid-template-columns: 40% 60%
     overflow: auto
@@ -91,7 +137,7 @@ p
 .movieGenre
     background: $movieInfoColors
     border-radius: $borderRadius
-    width: 75%
+    width: 80%
     height: 25%
     display: flex
     justify-content: center
@@ -99,43 +145,38 @@ p
     overflow: auto
 
 .movieRating
-    background: $movieInfoColors
-    border-radius: $borderRadius
-    width: 75%
+    width: 80%
     height: 25%
     display: flex
     justify-content: center
     align-items: center
-    font-size: 1vh 1vw
 
 .mustWatch
-    background: $movieInfoColors
-    border-radius: $borderRadius
-    color: $textColor
-    width: 75%
+    width: 80%
     height: 25%
     display: flex
     justify-content: center
     align-items: center
-    border-width: 1px
-    border-color: $textColor
-    border-style: solid
-    transition: transform 100ms ease-in
-    font-size: 1vh 1vw
+    transition: transform 50ms ease-in
     &:hover
         transform: scale(1.05)
+    &:active
+        transform: scale(0.95)
 
 .movieInfoRight
     grid-column: 2
-    display: block
+    display: grid
     overflow: auto
+    place-items: center
 
 .moviePlot
     width: 90%
     height: 90%
-    text-align: center
     display: grid
     place-items: center
+
+.director
+    margin-bottom: 1em
 
 @mixin TextSizeChanges($max-width)
     @media (max-width: $max-width)

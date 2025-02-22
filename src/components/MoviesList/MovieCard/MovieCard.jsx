@@ -30,7 +30,7 @@ const MovieCard = ({ id, name, director, actors, genre, rating, posterURL, poste
 
             <MoviePoster className={"moviePoster"} posterURL={posterURL} posterDef={posterDef}/>            
 
-            <MovieInfo className="movieInfo" genre={genre} rating={rating} plot={plot}/>
+            <MovieInfo className="movieInfo movieInfoStyle" genre={genre} rating={rating} plot={plot}/>
             
         </div>
     );

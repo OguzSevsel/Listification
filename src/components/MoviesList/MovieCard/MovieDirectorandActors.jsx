@@ -4,14 +4,14 @@ function MovieDirectorandActors({movieName, className, actors, director}) {
   return (
     
     <div className={className}>
-        <h1 className="movieName">{movieName}</h1>
-        <h2>Director</h2>
-        <p>{director}</p>
+        <h1 className="movieName style font">{movieName}</h1>
+        <h2 className='style font'>Director</h2>
+        <li className='director style font'>{director}</li>
         
-        <h2>Actors</h2>
+        <h2 className='style font'>Actors</h2>
         {
             actors.map((actor, index) => (
-                <p key={index} className="movieActor">{actor.Name} {actor.surName}</p>
+                <li key={index} className="movieActor style font">{actor.Name} {actor.surName}</li>
             ))
         }
     </div>

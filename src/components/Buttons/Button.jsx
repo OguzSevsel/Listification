@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Button = (onClick, isIcon, icon, buttonText, rounding, className) => {
+const Button = ({onClick, isIcon, icon, buttonText, rounding, className}) => {
 
     return (
         <button className={className} style={{borderRadius: rounding}} onClick={onClick} >
