@@ -1,9 +1,12 @@
 import React from "react";
-import "./MovieCard.sass";
+import MovieInfo from "./MovieInfo";
+import MovieDirectorandActors from "./MovieDirectorandActors";
+import MoviePoster from "./MoviePoster";
 
 import { useSortable } from "@dnd-kit/sortable";
 import {CSS} from '@dnd-kit/utilities';
 
+import "./MovieCard.sass";
 
 const MovieCard = ({ id, name, director, actors, genre, rating, posterURL, posterDef, plot, className }) => {
 
@@ -22,42 +25,13 @@ const MovieCard = ({ id, name, director, actors, genre, rating, posterURL, poste
             className={className}
             style={style}
         >
-            <div className="movieDir">
-                <h1 className="movieName">{name}</h1>
-                <h2>Director</h2>
-                <p>{director}</p>
-                
-                <h2>Actors</h2>
-                {
-                    actors.map((actor, index) => (
-                        <p key={index} className="movieActor">{actor.Name} {actor.surName}</p>
-                    ))
-                }
+            
+            <MovieDirectorandActors  movieName={name} className={"movieDir"} actors={actors} director={director}/>
 
-            </div>
-            <img className="moviePoster" src={posterURL} alt={posterDef} />
+            <MoviePoster className={"moviePoster"} posterURL={posterURL} posterDef={posterDef}/>            
 
-            <div className="movieInfo">
-
-                <div className="movieInfoLeft">
-                    <div className="movieGenre">
-                        <p>{genre}</p>
-                    </div>
-
-                    <div className="movieRating">
-                        <p>IMDB <br />{rating}</p>
-                    </div>
-                    <button className="mustWatch">
-                        Add to Must Watch
-                    </button>
-                </div>
-
-                <div className="movieInfoRight">
-                    <p className="moviePlot">{plot}</p>
-                </div>
-
-            </div>
-
+            <MovieInfo className="movieInfo" genre={genre} rating={rating} plot={plot}/>
+            
         </div>
     );
 
